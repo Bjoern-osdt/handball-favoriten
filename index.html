@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- Keine Werbung, keine Tracker: Skripte/Styles/Bilder nur von dieser Seite,
+       Datenabrufe nur zum eigenen Cloudflare Worker (*.workers.dev). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Handball Favoriten</title>
+  <meta name="description" content="Lieblingsmannschaften aus dem HVNB-nuLiga: Spielplan, Tabelle, Mannschafts- und Spielerstatistiken, Mitteilungen bei Spielplanänderungen." />
+  <meta name="theme-color" content="#1b5e20" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon192.png" />
+  <link rel="apple-touch-icon" href="icons/icon192.png" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="backBtn" class="icon-btn" title="Zurück" aria-label="Zurück" hidden>←</button>
+      <h1 id="pageTitle">Handball Favoriten</h1>
+      <div class="topbar-actions" id="topbarActions"></div>
+    </div>
+  </header>
+
+  <div id="notifyBanner" class="notify-banner" hidden>
+    <span>🔔 Mitteilungen bei Spielplanänderungen, neuen Ergebnissen und vor Anpfiff aktivieren?</span>
+    <div class="notify-banner-actions">
+      <button class="btn small enable">Aktivieren</button>
+      <button class="btn small secondary dismiss">Nicht jetzt</button>
+    </div>
+  </div>
+
+  <main id="app-root" class="app-root" aria-live="polite"></main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
